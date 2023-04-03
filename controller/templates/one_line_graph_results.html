@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Full Steam Ahead</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/topnav.css') }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--Top header with the picture and title-->
+<div class="header">
+<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1200px-Steam_icon_logo.svg.png" alt="Steam Logo" height=100px>
+   Full Steam Ahead</h2>
+</div>
+
+<!--permanent navigation bar-->
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="about">About</a>
+  <a href="topgames">Top Games</a>
+</div>
+
+<div class="pagetitle">
+	<h1>Home: Results</h1>
+</div>
+
+<!--left row, contains larger and flexible version of the graph key-->
+<div class="row">
+  <div class="column side">
+  <h2><b>Graph Key</b></h2>
+    <p>Values of 0 do not necessarily mean there were zero players that month, 
+	    it could be because the game was not released yet so we do not have data on it
+	    or the value you inputted was before July 2012 and so the graph shows zero.</p>
+  <h3>Game Title: </h3>
+    <p>{{ game_name }}</p>
+    <p>Line Type: solid purple</p>
+  <h3>Time Range: </h3>
+    <p>July 2012 to September 2021</p>
+  <h3>X-Axis:</h3>
+    <p>Time in months</p>
+  <h3>Y-Axis:</h3>
+    <p>Average Number of Players on Steam in thousands</p>
+</div>
+
+<!--middle row, contains the graph-->
+  <div class="column middle"><div class="container">
+	<h3>Graph Results: Popularity of {{ game_name }} from July 2012 to September 2021</h3>
+  <img src="{{ url_for('static', filename='result_image.png') }}" alt="the result graph as an png image" width= 90%, height= auto class=center />
+</div>
+</div>
+</div>
+
+<!--footer, same on each page-->
+<div class="footer">
+  <small>&copy; Full Steam Ahead</small>
+<nav>
+    <a href="/">Home</a>
+    <a href="about">About</a>
+    <a href="topgames">Top Games</a>
+  </nav>
+</div>
+
+</body>
+</html>

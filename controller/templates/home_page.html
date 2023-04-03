@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Full Steam Ahead</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/form.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/topnav.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/autocomplete.css') }}">	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--Top header with the picture and title-->
+<div class="header">
+<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1200px-Steam_icon_logo.svg.png" height=100px>
+   Full Steam Ahead</h2>
+</div>
+
+<!--permanent navigation bar-->
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="about">About</a>
+  <a href="topgames">Top Games</a>
+</div>
+
+<div class="pagetitle">
+	<h1>Home</h1>
+</div>
+
+<!--left row, contains quick information to answer the 5 home page questions-->
+<div class="row">
+  <div class="column side">
+  <h3><b><i>Welcome to Full Steam Ahead: the Steam data visualizer!</i></b></h3>
+  <h4>Using the forms to the right, you can...</h4>
+	<li>Compare the data of any two of the 100 Top Games from September 2021</li>
+	<li>View popularity trends for any month from <b>July 2012- September 2021</b></li>
+	<li>See the trendline for one game from <b>July 2012- September 2021</b></li>
+  	<li>Generate fast and clear visuals</li>
+  <h4><i>You can get quick, clear data on the gaming trends of the 2010's!</i></h4>
+</div>
+
+<!--middle row, contains the two game comparison form-->
+  <div class="column middle"><div class="container">
+	<h3 id="compare">Compare the popularity of two games over a specified time frame (<b>July 2012- September 2021</b>)</h3>
+	  <form autocomplete="off" action="/graph_results" method="post">
+          <!--Writing in the first game title-->
+    		<label for="game_name_1">Game Title &#35 1</label>
+    		<input type="text" id="game_name_1" name="game_name_1" placeholder="Title of the 1st game...">
+          <!--Writing in the second game title-->
+    		<label for="game_name_2">Game Title &#35 2</label>
+    		<input type="text" id="game_name_2" name="game_name_2" placeholder="Title of the 2nd game..">
+          <!--choosing the start month-->
+    		<label for="start_month">Start Month</label>
+    		<select id="start_month" name="start_month">
+			<option value="1">January</option>
+      			<option value="2">February</option>
+      			<option value="3">March</option>
+              		<option value="4">April</option>
+      			<option value="5">May</option>
+      			<option value="6">June</option>
+              		<option value="7">July</option>
+      			<option value="8">August</option>
+      			<option value="9">September</option>
+              		<option value="10">October</option>
+			<option value="11">November</option>
+			<option value="12">December</option>
+		</select>
+          <!--choosing the start year from a select menu-->
+    		<label for="start_year">Start Year &#40 2012-2021 &#41</label>
+    		<select id="start_year" name="start_year">
+      			<option value="2012">2012</option>
+      			<option value="2013">2013</option>
+      			<option value="2014">2014</option>
+              		<option value="2015">2015</option>
+      			<option value="2016">2016</option>
+      			<option value="2017">2017</option>
+             		<option value="2018">2018</option>
+      			<option value="2019">2019</option>
+      			<option value="2020">2020</option>
+              		<option value="2021">2021</option>
+    		</select>
+	<!--choosing the end month-->
+    		<label for="end_month">End Month</label>
+    		<select id="end_month" name="end_month">
+			<option value="1">January</option>
+      			<option value="2">February</option>
+      			<option value="3">March</option>
+              		<option value="4">April</option>
+      			<option value="5">May</option>
+      			<option value="6">June</option>
+              		<option value="7">July</option>
+      			<option value="8">August</option>
+      			<option value="9">September</option>
+              		<option value="10">October</option>
+			<option value="11">November</option>
+			<option value="12">December</option>
+		</select>
+          <!--choosing the end year from a select menu-->
+    		<label for="end_year">End Year &#40 2012-2021 &#41</label>
+    		<select id="end_year" name="end_year">
+      			<option value="2012">2012</option>
+      			<option value="2013">2013</option>
+      			<option value="2014">2014</option>
+              		<option value="2015">2015</option>
+      			<option value="2016">2016</option>
+      			<option value="2017">2017</option>
+              		<option value="2018">2018</option>
+      			<option value="2019">2019</option>
+      			<option value="2020">2020</option>
+              		<option value="2021">2021</option>
+    		</select>
+	<!--submit button-->
+    	<input type="submit" value="Submit">
+	</form>
+
+	<!--month top games form-->
+	<h3 id="monthly top games">View the monthly top games for any month between <b>July 2012 - September 2021</b></h3>
+	  <form action="/table_results" method="post">
+          <!--choosing the month-->
+    		<label for="month">Month</label>
+    		<select id="month" name="month">
+			<option value="1">January</option>
+      			<option value="2">February</option>
+      			<option value="3">March</option>
+              		<option value="4">April</option>
+      			<option value="5">May</option>
+      			<option value="6">June</option>
+              		<option value="7">July</option>
+      			<option value="8">August</option>
+      			<option value="9">September</option>
+              		<option value="10">October</option>
+			<option value="11">November</option>
+			<option value="12">December</option>
+		</select>
+          <!--choosing the year from a select menu-->
+    		<label for="year">Year &#40 2012-2021 &#41</label>
+    		<select id="year" name="year">
+      			<option value="2012">2012</option>
+      			<option value="2013">2013</option>
+      			<option value="2014">2014</option>
+              		<option value="2015">2015</option>
+      			<option value="2016">2016</option>
+      			<option value="2017">2017</option>
+              		<option value="2018">2018</option>
+      			<option value="2019">2019</option>
+      			<option value="2020">2020</option>
+              		<option value="2021">2021</option>
+    		</select>
+	<!--submit button-->
+    <input type="submit" value="Submit">
+    </form>
+     
+    <!--popularity over all time-->
+	<h3 id="all time">View the popularity of one game over all time, from <b>July 2012 to September 2021</b></h3>
+	  <form autocomplete="off" action="/one_line_graph" method="post">
+          <!--choosing the game title-->
+    		<label for="game_name">Game Title</label>
+    		<input type="text" id="myInput" name="game_name" placeholder="Title of the game...">
+	<!--submit button-->
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+</div>
+
+<!--footer, same on each page-->
+<div class="footer">
+  <small>&copy; Full Steam Ahead</small>
+<nav>
+    <a class="active" href="/">Home</a>
+    <a href="about">About</a>
+    <a href="topgames">Top Games</a>
+  </nav>
+</div>
+
+</body>
+</html>

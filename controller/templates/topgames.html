@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Full Steam Ahead</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/topnav.css') }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--Top header with the picture and title-->
+<div class="header">
+<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1200px-Steam_icon_logo.svg.png" alt="Steam Logo" height=100px>
+   Full Steam Ahead</h2>
+</div>
+
+<!--permanent navigation bar-->
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="about">About</a>
+  <a class="active" href="topgames">Top Games</a>
+</div>
+
+<div class="pagetitle">
+	<h1>Top Games</h1>
+</div>
+
+<!--left row, contains information about the list of games-->
+<div class="row">
+  <div class="column side">
+  <h2><b>List Information</b></h2>
+    <p>This list contains each title for the current Top 100 Games on Steam, which was collected and posted by Jack Ogozaly on October 2021. Our website can compile results for any of the following games.</p>
+    <br>
+    <p>For more information on how this data has been gathered check our About the Data page.</p>
+</div>
+
+<!--middle row, contains the list of games-->
+  <div class="column middle"><div class="container">
+	<h2>Available Top Games</h2>
+  <ol type="1">
+         {% for item in results %}
+            {% for data in item %}
+                <li>{{ data }}</li>
+            {% endfor %}
+         {% endfor %}
+  </ol>
+</div>
+</div>
+</div>
+
+<!--footer, same on each page-->
+<div class="footer">
+  <small>&copy; Full Steam Ahead</small>
+<nav>
+    <a href="/">Home</a>
+    <a href="about">About</a>
+    <a class="active" href="topgames">Top Games</a>
+  </nav>
+</div>
+
+</body>
+</html>

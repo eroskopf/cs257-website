@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Full Steam Ahead</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/topnav.css') }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--Top header with the picture and title-->
+<div class="header">
+<h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1200px-Steam_icon_logo.svg.png" alt="Steam Logo" height=100px>
+   Full Steam Ahead</h2>
+</div>
+
+<!--permanent navigation bar-->
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="about">About</a>
+  <a href="topgames">Top Games</a>
+</div>
+
+<div class="pagetitle">
+	<h1>Error: Data Not Found</h1>
+</div>
+
+<!--left row, contains the error message and possible causes-->
+<div class="row">
+  <div class="column side">
+  <h2><b>Your input has returned an error. :(</b></h2>
+    <h3><b>This could be because...</b></h3>
+    <ol>
+      <li>One or more of the game titles were misspelled, or is not on the list of available top games.</li>
+      <li>Your start or end dates were out of the specified range (July 2012 - Sept 2021).</li>
+      <li>Your start date was after the end date.</li>
+    </ol>
+</div>
+
+<!--middle row, contains the possible solutions to the error-->
+  <div class="column middle">
+  <h2><b>How to Fix This:</b></h2>
+    <ul>
+      <li>Check the "Top Games" page to view our list of available top games. We recommend copy and pasting to make sure everything is spelled correctly.</li>
+      <li>Make sure your dates are within the specified range (July 2012 - Sept 2021).</li>
+    </ul>
+</div>
+</div>
+
+<!--footer, same on each page-->
+<div class="footer">
+  <small>&copy; Full Steam Ahead</small>
+<nav>
+    <a href="/">Home</a>
+    <a href="about">About</a>
+    <a href="topgames">Top Games</a>
+  </nav>
+</div>
+
+</body>
+</html>
