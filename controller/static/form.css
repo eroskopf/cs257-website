@@ -1,0 +1,48 @@
+/* style sheet to help create form looking things
+from https://www.w3schools.com/howto/howto_css_contact_form.asp
+*/
+input[type=text]{
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #171a21; /* dark navy with color scheme */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+}
+
+input[type=text]:focus {
+  background-color: 66c0f4;
+}
+
+select {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #171a21; /* dark navy with color scheme */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+}
+
+/* Style the submit button to be navy with white text */
+input[type=submit] {
+  background-color: #2a475e;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #1b2838;
+}
+
+/* Add a light blue background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #c7d5e0;
+  padding: 20px;
+}
+}
