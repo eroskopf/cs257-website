@@ -1,4 +1,4 @@
-#CS257 Website
+# CS257 Website
 This was a team project that I worked on for a term. Our goal was to create a website with a backend that did some sort of data processing and generated graphs.
 I had to copy it here because it's not visible on my github because of the way Carleton has set up student github accounts. Not everything is quite is the correct 
 place becase it was so difficult to import, but the main gist of it is here. 
